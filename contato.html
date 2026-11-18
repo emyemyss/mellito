@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mellito | Contato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header class="cabecalho">
+    <a class="cabecalho__logo" href="index.html"><img src="img/mellito logo.png" alt="Mellito"></a>
+    <nav class="menu">
+      <a class="menu__link" href="index.html">Home</a>
+      <a class="menu__link" href="sobre-nos.html">Sobre Nós</a>
+      <a class="menu__link" href="produtos.html">Produtos</a>
+      <a class="menu__link menu__link--ativo" href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-circulo">
+      <div class="container">
+        <div class="hero-circulo__conteudo">
+          <h1 class="hero-circulo__titulo">Fale com a gente</h1>
+          <p class="hero-circulo__texto">Tem alguma dúvida, sugestão ou quer saber mais sobre a Mellito? Estamos aqui
+            para ouvir você.</p>
+        </div>
+      </div>
+      <img class="hero-circulo__imagem" src="img/melli na cadeira.jpg" alt="">
+    </section>
+
+    <!-- Contatos e formulário -->
+    <section class="secao">
+      <div class="container contato">
+        <ul class="contato__lista">
+          <li class="contato__item">
+            <a
+              href="https://www.instagram.com/mellito_dm1/?utm_source=ig_web_button_share_sheet"><img
+                src="img/icons/instagram.svg" alt="">@mellito_dm1
+            </a>
+          </li>
+          <li class="contato__item"><img src="img/icons/email.svg" alt="">mellitodm1@gmail.com</li>
+          <li class="contato__item"><img src="img/icons/whatsapp.svg" alt="">11 99999-9999</li>
+        </ul>
+
+        <form class="formulario" action="#" method="post">
+          <p class="formulario__titulo">Envie-nos uma mensagem!</p>
+          <input class="formulario__campo" type="text" name="nome" placeholder="Seu nome" aria-label="Seu nome"
+            required>
+          <input class="formulario__campo" type="text" name="assunto" placeholder="Qual é o assunto"
+            aria-label="Assunto" required>
+          <textarea class="formulario__campo formulario__campo--mensagem" name="mensagem" placeholder="Sua mensagem"
+            aria-label="Sua mensagem" required></textarea>
+          <button class="formulario__botao" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <a class="footer_logo" href="contato.html"><img src="img/mellito logo.png" alt="Mellito"></a>
+    <p>© 2026 mellito. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>

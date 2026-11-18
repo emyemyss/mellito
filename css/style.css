@@ -1,0 +1,523 @@
+/* ===== Variáveis ===== */
+:root {
+  header {
+    position: relative;
+    z-index: 10;
+  }
+
+  h1,
+  h2 {
+    color: #7b8cde
+  }
+
+  --cor-texto: #000;
+  --cor-fundo: #fff8e9;
+
+  --cor-cinza-claro: #7b8cde;
+  --fonte: 'Poppins',
+  sans-serif;
+  --largura-max: 1100px;
+  --espaco: 24px;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  background: var(--cor-cinza);
+  /* cinza até a imagem ser inserida */
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 var(--espaco);
+}
+
+.secao {
+  padding: 50px;
+  padding-top: 300px;
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 25px var(--espaco);
+  background: var(--cor-cinza-claro);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.cabecalho__logo img {
+  width: 100px;
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu__link {
+  text-decoration: none;
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.menu__link:hover,
+.menu__link--ativo {
+  text-decoration: underline;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  height: 280px;
+  background: var(--cor-cinza-claro);
+  display: block;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  color: #4a5484;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Carrossel ===== */
+.carrossel {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.carrossel__faixa {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carrossel__faixa::-webkit-scrollbar {
+  display: none;
+}
+
+.carrossel__faixa img {
+  flex: 0 0 100%;
+  height: 600px;
+  scroll-snap-align: start;
+  border-radius: 20px;
+  /* Opcional: deixa visualmente mais leve */
+  overflow: hidden;
+}
+
+.carrossel__botao {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--cor-cinza-claro);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carrossel__botao--anterior {
+  left: 20px;
+}
+
+.carrossel__botao--proximo {
+  right: 20px;
+}
+
+/* ===== Hero com imagem de fundo (Home) ===== */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 26%;
+  min-height: 320px;
+  color: #fff;
+}
+
+.hero__imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 545px;
+}
+
+.footer_logo {
+  justify-content: center;
+  max-width: 10rem;
+  display: flex;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 70%);
+
+}
+
+.hero__conteudo {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 40px;
+}
+
+.hero__titulo {
+  max-width: 420px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.hero__texto {
+  max-width: 420px;
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+/* ===== Hero com círculo (Sobre Nós e Contato) ===== */
+
+.hero-circulo__conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  padding-top: 400px;
+  font-size: 40px;
+}
+
+.hero-circulo__titulo {
+  font-size: 60px;
+  font-weight: 600;
+  margin: auto;
+}
+
+.hero-circulo__texto {
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.hero-circulo__imagem {
+  position: absolute;
+  top: 200px;
+  right: 80px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Bloco imagem + texto ===== */
+.bloco {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.bloco__imagem {
+  width: 520px;
+  height: 520px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.bloco__titulo {
+  font-size: 40px;
+  font-weight: 600;
+
+}
+
+.bloco__texto {
+  margin-top: 12px;
+}
+
+.bloco--direita {
+  text-align: right;
+}
+
+
+/* ===== Sobre Nós ===== */
+.sobre__texto {
+  max-width: 900px;
+}
+
+/* Área externa para centralizar o bloco na página */
+.secao-historia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 300px 20px;
+  /* Dá respiro em cima, embaixo e nas laterais no celular */
+}
+
+/* O "quadrado" (card) que preenche o fundo do texto */
+.historia-card {
+  background-color: #F2B5CE;
+  /* Cor de destaque suave (ajuste para a paleta da Mellito) */
+  max-width: 1400px;
+  /* Limita a largura para linhas mais curtas e confortáveis */
+  width: 100%;
+  padding: 200px 48px;
+  /* Espaço interno entre a borda do quadrado e o texto */
+  border-radius: 16px;
+  /* Deixa os cantos levemente arredondados (use 0px se quiser reto) */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  /* Sombra bem sutil para dar profundidade */
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+}
+
+/* Melhorando a leitura do texto em si */
+.historia-card p {
+  font-size: 20px;
+  /* Tamanho confortável (~18px) */
+  line-height: 1.7;
+  /* Aumenta o espaçamento entre as linhas para o texto respirar */
+  color: #e01f70;
+  margin: 0;
+  /* Remove margens padrão que podem desalinhar o padding */
+  text-align: center;
+  /* Alinhamento à esquerda facilita a leitura (evite justificado) */
+}
+
+
+.pilares {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  background-color: #B8FFD9;
+  padding: 140px 140px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  margin-top: -80px;
+  margin-bottom: 100px;
+}
+
+.pilar__titulo {
+  margin-bottom: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pilar__texto {
+  font-size: 0.875rem;
+  text-align: justify;
+  color: #0cb159;
+}
+
+/* ===== Produtos ===== */
+.secao__titulo {
+  margin-bottom: 16px;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: -120px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card__imagem {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.card__nome {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card__preco {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card__descricao {
+  font-size: 0.875rem;
+}
+
+.produto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.produto__imagem {
+  width: 100%;
+  height: 260px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.produto__nome {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.produto__preco {
+  margin: 4px 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Produtos ímpares: imagem à esquerda, texto à direita */
+.produto:nth-of-type(odd) .produto__info {
+  text-align: right;
+}
+
+/* Produtos pares: texto à esquerda, imagem à direita */
+.produto:nth-of-type(even) .produto__imagem {
+  order: 2;
+}
+
+/* ===== Contato ===== */
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contato__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contato__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+}
+
+.contato__item img {
+  width: 20px;
+  height: 20px;
+  background: none;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+
+.formulario__titulo {
+  font-size: 0.875rem;
+}
+
+.formulario__campo {
+  padding: 6px 8px;
+  border: 1px solid var(#e01f70);
+  border-radius: 2px;
+  background: #FFAB87;
+  font: inherit;
+  font-size: 0.8125rem;
+}
+
+.formulario__campo--mensagem {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formulario__botao {
+  padding: 6px;
+  border: 0;
+  border-radius: 2px;
+  color: #0cb159;
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.hero-circulo__imagem {
+  width: 650px;
+  height: 650px;
+  object-fit: cover;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .cabecalho {
+    gap: 16px;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  .bloco,
+  .produto,
+  .contato,
+  .pilares {
+    grid-template-columns: 1fr;
+  }
+
+  .bloco--direita,
+  .produto:nth-of-type(odd) .produto__info {
+    text-align: left;
+  }
+
+  .produto:nth-of-type(even) .produto__imagem {
+    order: 0;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-circulo__imagem {
+    width: 600px;
+    height: 600px;
+    top: -80px;
+    right: -100px;
+  }
+}
